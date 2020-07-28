@@ -1,0 +1,16 @@
+Technical Challenge
+5.	If you were asked to implement all the tests of sign up page, list out the tests:
+You would implement:
+ -	Registration successfully
+ -	Leave all field empty and click Sign Up button
+ -	Validate error message for invalid Name field (shorter than 2 characters, longer than 40 characters).
+ -	Validate error message for invalid email field
+ -	Validate error message for invalid password field(if password complex is required)
+You would not implement and the reasons
+6.	If the Google Recaptcha exists, what will you do to unblock the sign up automation tests and further tests after successful registration.
+ -	Google Recaptcha is used against automation. So I think we can Disable Captcha for the test build that is used for automation
+7.	If you had to run the Sign Up test flow 100 times, each using a different email, what would you do to run the test efficiently?
+ -	I will combine the email with a random number (E.g. test1357@venngage.com)
+8.	What else would you verify to make sure that the account has signed up successfully?
+ -	Should verify that account is stored in the database.
+ -	If can't access to db => should sign in by that account to verify the account has signed up successfully.
