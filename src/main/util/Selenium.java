@@ -34,5 +34,30 @@ public class Selenium {
     public void clickByXpath(String xpath) {
         click(By.xpath(xpath));
     }
-	
-}
+
+	/**
+	 * Get text of the element
+	 * @param locator
+	 * @return
+	 */
+	public String getTextInElement(String locator) {
+		WebElement element = driver.findElement(By.xpath(locator));
+		return element.getText();
+	}
+
+	/**
+	 * Explicit wait the element visible
+	 * @param locator
+	 */
+	public void waitToElementVisible(String locator) {
+		By byLocator = By.xpath(locator);
+		WebDriverWait waitExplicit = new WebDriverWait(driver, 30);
+		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+	}
+
+	public int randomInt() {
+		int value;
+		Random randomGenerator = new Random();
+		value = randomGenerator.nextInt(999);
+		return value;
+	}
